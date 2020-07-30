@@ -22,19 +22,16 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state= {
-      newItem: '',
-      list: []
+      name:'',
+      balance: 0
     }
   }
 
-  addItem(todoValue){
-    if(todoValue !=''){
-      cosnt newItem={
-        id: Date.now(), 
-        value: todoValue,
-        isDone: false 
-      }
-    }
+  handleChange(e){
+    this.setState({
+      name: e.value.name,
+      age: e.value.age
+    });
   }
 
   render(){
