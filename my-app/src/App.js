@@ -27,16 +27,22 @@ class App extends React.Component{
     }
   }
 
-  handleChange(e){
+  handleChange(name){
     this.setState({
-      name: e.value.name,
-      age: e.value.age
+      name: name
     });
   }
 
   render(){
     return(
-      <h1>hi</h1>
+      <div>
+        <input 
+        type="text" 
+        value={this.state.name} 
+        onChange={e=> this.handleChange(e.target.value)}>
+        
+        </input>
+      </div>
     )
   }
 }
