@@ -30,6 +30,16 @@ class App extends React.Component{
     }
   }
 
+  deleteItem(id){
+    const list= [...this.state.list] 
+    const updatedList=  list.filter((item)=>item.id !== id);
+    this.setState({list: updatedList}); 
+  }
+
+  updateInput(input){
+    this.setState({newItem: input}); 
+  }
+
   render(){
     return(
       <div style={{maxWidth:"700px", margin:"10px auto"}}> 
