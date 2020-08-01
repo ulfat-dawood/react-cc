@@ -40,6 +40,13 @@ class App extends React.Component{
     this.setState({newItem: input}); 
   }
 
+  handleChecked(id){
+    
+    const list= [...this.state.list]  
+    list.map(item=> {item.id=id?item.isDone=!item.isDone:null})
+    this.setState({list}); 
+  }
+
   render(){
     return(
       <div style={{maxWidth:"700px", margin:"10px auto"}}> 
@@ -59,13 +66,15 @@ class App extends React.Component{
              {this.state.list.map(item=>{
                return(
                  <li key={item.id}>
-                  <input type="checkbox" checked={item.isDone} />
+                  <input type="checkbox" checked={item.isDone} onChange={()=>this.handleChecked(item.id)}/>
                   {item.value }
-                  <button class="btn">Delete</button>
+                  <button class="btn"
+                  onClick={()=>this.deleteItem(item.id)}
+                  >Delete</button>
                  </li>
                )
              })}
-             
+            
            </ul>
          </div>
       </div>
