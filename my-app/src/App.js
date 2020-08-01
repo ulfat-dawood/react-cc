@@ -58,18 +58,14 @@ class App extends React.Component{
            <ul>
              {this.state.list.map(item=>{
                return(
-                 <li key={item.id}>{item.value} 
-                  <input type="checkbox" checked={item.isDone} onChange={}/>
+                 <li key={item.id}>
+                  <input type="checkbox" checked={item.isDone} />
                   {item.value }
                   <button class="btn">Delete</button>
                  </li>
                )
              })}
-             <li>
-               <input type="checkbox" name="" id=""/>
-               Read a book
-               <button class="btn">Delete</button>
-             </li>
+             
            </ul>
          </div>
       </div>
