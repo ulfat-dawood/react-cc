@@ -9,7 +9,7 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      newItem: "",
+      newItem: {},
       list:[]
     }
   }
@@ -25,7 +25,7 @@ class App extends React.Component{
        list.push(newItem);  
        this.setState({
          list, 
-         newItem: ''
+         newItem: {}
        }); 
     }
   }
@@ -48,10 +48,23 @@ class App extends React.Component{
            Add an item... 
          </div>
          <br/>
-         <input type="text" className="input-text" placeholder="write a todo"/>
-         <button className="add-btn">Add to-do</button>
+         <input type="text" className="input-text" placeholder="write a todo"
+         value={this.state.newItem.value} onChange={e => this.updateInput(e.target.value)}/>
+         <button className="add-btn"
+         onClick={()=>this.addItem(this.state.newItem)}
+         disabled={!this.state.newItem.length}
+         >Add to-do</button>
          <div className="list">
            <ul>
+             {this.state.list.map(item=>{
+               return(
+                 <li key={item.id}>{item.value} 
+                  <input type="checkbox" checked={item.isDone} onChange={}/>
+                  {item.value }
+                  <button class="btn">Delete</button>
+                 </li>
+               )
+             })}
              <li>
                <input type="checkbox" name="" id=""/>
                Read a book
