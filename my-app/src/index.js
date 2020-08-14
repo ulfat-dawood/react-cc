@@ -1,26 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom'; 
+//import {Route, Link, Switch, BrowserRouter as Router} from 'react-router-dom'; 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Homepage from './components/Homepage'; 
-import Login from './components/Login'; 
-import Signup from './components/Signup'; 
-import NotFound from './components/NotFound'; 
+// import Homepage from './components/Homepage'; 
+// import Login from './components/Login'; 
+// import Signup from './components/Signup'; 
+// import NotFound from './components/NotFound'; 
 
-const routing= (
-  <Router>
-    <Switch>
-      <Route exact path='/' component={Homepage}/>
-      <Route  path='/login' component={Login}/>
-      <Route  path='/signup' component={Signup}/>
-      <Route  component={NotFound}/> //404 route doesn't exist
-    </Switch>
-  </Router>
-)
+// const routing= (
+//   <Router>
+//     <Switch>
+//       <Route exact path='/' component={Homepage}/>
+//       <Route  path='/login' component={Login}/>
+//       <Route  path='/signup' component={Signup}/>
+//       <Route  component={NotFound}/> //404 route doesn't exist
+//     </Switch>
+//   </Router>
+// )
 ReactDOM.render(
-  routing,
+  //routing,
+  <App/>, 
   document.getElementById('root')
 );
 

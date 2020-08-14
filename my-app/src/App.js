@@ -8,25 +8,32 @@ export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      text: ''
+      name: '',
+      gender:''
     }
   }
 
- handleChange(text){
+ handleChange(event){
    this.setState({
-     text:text
+     //ES6 way of creating dynamic object key
+     [event.target.name]:event.target.value
    })
  }
 
- handleSubmit(){
-  alert(this.state.text); 
+ handleSubmit(event){
+   event.preventDefault(); 
+   console.log(this.state); 
  }
 
   render(){
     return(
       <div style={{maxWidth:"700px", margin:"10px auto"}}> 
-        <input type="text" value={this.state.text} onChange={e=>this.handleChange(e.target.value)}/>
-        <button onClick={()=>this.handleSubmit()}>Submit</button>
+        name:
+        <input type="text" name='name' value={this.state.text} onChange={e=>this.handleChange(e)}/><br/>
+        gender:
+        <input type="text" name='gender' value={this.state.text} onChange={e=>this.handleChange(e)}/>
+
+        <button onClick={(e)=>this.handleSubmit(e)}>Submit</button>
       </div>
     )
   }
