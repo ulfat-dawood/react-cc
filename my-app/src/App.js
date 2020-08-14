@@ -29,9 +29,9 @@ export default class App extends React.Component{
     return(
       <div style={{maxWidth:"700px", margin:"10px auto"}}> 
         name:
-        <input type="text" name='name' value={this.state.text} onChange={e=>this.handleChange(e)}/><br/>
+        <input type="text" name='name' value={this.state.name} onChange={e=>this.handleChange(e)}/><br/>
         gender:
-        <input type="text" name='gender' value={this.state.text} onChange={e=>this.handleChange(e)}/>
+        <input type="text" name='gender' value={this.state.gender} onChange={e=>this.handleChange(e)}/>
 
         <button onClick={(e)=>this.handleSubmit(e)}>Submit</button>
       </div>
